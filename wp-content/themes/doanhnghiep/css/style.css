@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap&subset=vietnamese');
-@import url('https://fonts.googleapis.com/css?family=Ranga:400,700&display=swap');
-/*font-family: 'Roboto Slab', serif;
-font-family: 'Nunito', sans-serif;*/
+
  html{
      margin:0px !important;
      padding:0px !important;
@@ -26,8 +20,12 @@ font-family: 'Nunito', sans-serif;*/
 p:empty{
      display: none !important;
 }
+@font-face{
+    font-family: barlow;
+    src:url(../fonts/Barlow-Regular.ttf);
+}
  body{
-    font-family: 'Nunito', sans-serif;
+    font-family: barlow;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -37,9 +35,7 @@ p:empty{
     overflow-x: hidden;
     padding: 0px;
 }
-body.home{
-    overflow-y: hidden;
-}
+
 
  .container{
      max-width: 1600px;
@@ -610,7 +606,7 @@ input[type=number]::-webkit-outer-spin-button {
 
  .logo_site{
      max-width: 200px;
-     float: none;
+     float: left;
      transition: all 0.3s;
      margin: 10px 0px 10px 0px;
 }
@@ -725,9 +721,7 @@ input[type=number]::-webkit-outer-spin-button {
      background: #8cc63f;
      padding: 0px 0px;
 }
- .header{
-     background: #fff;
-}
+ .header{background: none;}
  .admin-bar .header{
      margin:0px 0px 0px 0px;
 }
@@ -1672,7 +1666,90 @@ line-height: 23px;
 /* end page-template-page-template-lienhe */
 
 /* css rau*/
-
+.wrap_cus_rv{
+    max-width: 1100px;
+    margin: 0px auto;
+}
+#news_activity .sc_news li figure{
+    height: 205px;
+    border-radius: 10px;
+}
+.suggest_price ul li{
+    display: inline-block;
+    margin: 0px 5px;
+    max-width: 250px;
+    width: 100%;
+}
+.suggest_price ul li a{
+    display: block;
+    background: rgba(255,255,255,0.7);
+    color:#000;
+    font-size: 24px;
+    padding: 20px 10px;
+    border-radius: 50px;
+}
+.suggest_price{
+    position: absolute;
+    bottom: 150px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    margin:0px auto;
+}
+.top_header{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    background: #fff;
+    width: 100%;
+    z-index: 99;
+}
+#cpanel_aptica {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+#cpanel_aptica::before {
+     content: "";
+     position: absolute;
+     background: rgba(0,0,0,0.3);
+     background-size: cover;
+     width: 100%;
+     height: 100%;
+     top: 0px;
+     left: 0px;
+}
+#myVideo {
+       position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+}
+.wrap_float_r{
+    float:right;
+}
+.wrap_float_r .tg_nav_search .wrap_nav_primary{
+    float:left;
+}
+.wrap_float_r .tg_nav_search .search_header{
+    float:right;
+}
+.tg_lang{
+    float:right;
+}
+.tg_nav_search{
+    display: table;
+    clear: both;
+    width: 100%;
+}
 /* end css rau*/
 
 /* pagination */

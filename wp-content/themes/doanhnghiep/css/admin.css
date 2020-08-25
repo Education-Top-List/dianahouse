@@ -40,5 +40,6 @@ a:hover{
 }
 .avatar img{
 	max-width: 150px;
-	height: 150px;
+	height: auto;
+	width: 100%;
 }

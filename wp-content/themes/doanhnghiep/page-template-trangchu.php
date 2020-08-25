@@ -17,10 +17,9 @@ $cats = get_categories($args);
 
 foreach($cats as $cat) {
   $childCat = $cat->cat_ID;
-  echo $childCat;
   $arg_child = array(
-    'cat'=> $childID, 
-    'posts_per_page'=> 10,
+    'cat'=> $childCat, 
+    'posts_per_page'=> 10
   );
   $query_child = new WP_Query($arg_child);
   ?>
@@ -40,10 +39,11 @@ foreach($cats as $cat) {
         <?php the_title(); ?>
         <figure class="<?php if($height_img_custom){echo $height_img_custom;}?>"  data-image="<?php echo $image[0]; ?>">
           <a href="<?php echo $image[0]; ?>" class="fancybox" data-fancybox="images">
-            <?php //the_post_thumbnail(); ?>
+            <?php the_post_thumbnail(); ?>
           </a>
           <div class="photo" style="background:url('<?php echo $image[0]; ?>');"></div>
         </figure>
+        <?php the_title(); ?>
       </div>
     <?php endwhile;?>
   </div>  
@@ -52,8 +52,18 @@ foreach($cats as $cat) {
 <?php
 }
 
-?>
 
+
+?>
+<div class="g_content">
+    <?php if(have_posts()):?>
+      <?php while(have_posts()) : the_post();
+             the_content();
+          endwhile;
+       ?>
+     <?php else: echo 'No data'; ?>
+    <?php endif; ?>
+</div>
 
 
 <?php get_footer(); ?>
